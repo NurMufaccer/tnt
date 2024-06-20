@@ -31,7 +31,7 @@
   font-size: 35px;
   font-weight: 600;
   padding-top: 20px;
-  padding-bottom: 0px;
+  padding-bottom: 30px;
 }
 .recoveryTextBox {
   margin-bottom: 50px;
@@ -52,7 +52,7 @@
 
 .formContent {
   display: grid;
-  row-gap: 16px;
+  row-gap: 30px;
 }
 
 .formBox {
@@ -120,15 +120,29 @@
   margin-top: 10px;
   cursor: pointer;
 }
-/* sign up */
-.signinlLink {
+/* sign up or sign in */
+.signupOrSigninlLink {
   text-align: center;
   font-size: 16px;
   font-weight: 400;
   margin-top: 15px;
-  margin-bottom: 120px;
 }
-.signinlLink a {
+.signupOrSigninlLink a {
   color: #000;
   text-decoration-line: underline;
+}
+/* password recovery */
+.passrecovery {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 15px;
+  margin-bottom: 70px;
+}
+.passrecovery a {
+  color: #000;
+  text-decoration-line: underline;
+}
+.bottompadd {
+  margin-bottom: 120px;
 }
