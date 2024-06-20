@@ -36,6 +36,9 @@
 .recoveryTextBox {
   margin-bottom: 50px;
 }
+.recoveryTextBox2 {
+  display: none;
+}
 .recoveryText {
   color: #000;
   text-align: center;
@@ -145,4 +148,70 @@
 }
 .bottompadd {
   margin-bottom: 120px;
+}
+/* For large devices (desktops and laptops) */
+@media only screen and (min-width: 1200px) {
+}
+/* For medium devices (tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+}
+/* For small devices (landscape phones) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+}
+
+/* For extra small devices (portrait phones) */
+@media only screen and (max-width: 575px) {
+  .loginBox {
+    width: 300px;
+  }
+  .loginBox img.logo {
+    width: 200px;
+  }
+  .heading {
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .recoveryTextBox {
+    display: none;
+  }
+  .recoveryTextBox2 {
+    display: block;
+    margin-bottom: 40px;
+  }
+  .recoveryText2 {
+    color: #000;
+    text-align: justify;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0 15px;
+  }
+  .formContent {
+    row-gap: 20px;
+  }
+  .formContent {
+    justify-items: center;
+  }
+  .formBox {
+    width: 230px;
+    height: 50px;
+  }
+  .formLabel {
+    font-size: 12px;
+  }
+  .btnPrimary {
+    width: 230px;
+    height: 50px;
+  }
+  .signupOrSigninlLink {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .passrecovery {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  .bottompadd {
+    margin-bottom: 100px;
+  }
 }
