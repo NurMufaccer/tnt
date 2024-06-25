@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <div class="mainBox">
+      <input type="checkbox" id="check" />
+      <div class="mainContainer">
+        <nav>
+          <h3>Edit Profile</h3>
+        </nav>
+      </div>
+      <!-- Navbar for mobile device -->
+      <nav class="navbar">
+        <div class="btnOne">
+          <label for="check">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="16"
+              viewBox="0 0 25 16"
+              fill="none"
+              style="cursor: pointer"
+            >
+              <line
+                x1="1"
+                y1="1"
+                x2="24"
+                y2="1"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <line
+                x1="1"
+                y1="8"
+                x2="24"
+                y2="8"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <line
+                x1="1"
+                y1="15"
+                x2="24"
+                y2="15"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </label>
+        </div>
+        <div class="navLogo">
+          <a href="#">
+            <img src="./images/TNT_LOGO.png" alt="" srcset="" />
+          </a>
+        </div>
+      </nav>
+      <!-- Sidebar -->
+      <div class="sidebarMenu">
+        <div class="logo">
+          <a href="#"><img src="./images/TNT_LOGO.png" alt="" srcset="" /></a>
+          <div class="logoTag">
+            <p>Hello, <br />Chloe Saw</p>
+          </div>
+        </div>
+        <div class="btnTwo">
+          <label for="check">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </div>
+
+        <div class="menu">
+          <ul class="largeView">
+            <!-- Profile li-->
+            <li>
+              <p class="menuTag">Profile</p>
+              <div class="subMenu">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <div class="menuChild">
+                        <img src="./images/profileLogo.png" alt="" />
+                        <p>Edit Profile</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="menuChild">
+                        <img src="./images/InterfaceDesignLogo.png" alt="" />
+                        <p>Interface Design</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- Work li-->
+            <li>
+              <p class="menuTag">Work</p>
+              <div class="subMenu">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <div class="menuChild">
+                        <img src="./images/projects.png" alt="" />
+                        <p>Projects</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="menuChild">
+                        <img src="./images/schedule.png" alt="" />
+                        <p>Schedule</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="menuChild">
+                        <img src="./images/Resources.png" alt="" />
+                        <p>Resources</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- Others li-->
+            <li>
+              <p class="menuTag">Others</p>
+              <div class="subMenu">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <div class="menuChild">
+                        <img src="./images/analytics.png" alt="" />
+                        <p>Analytics</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="menuChild">
+                        <img src="./images/reset pw.png" alt="" />
+                        <p>Reset Password</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <!-- Mobile View -->
+          <ul class="mobileView">
+            <li>
+              <div class="subMenu">
+                <ul>
+                  <li>
+                    <a href="#"> Edit Profile </a>
+                  </li>
+                  <li>
+                    <a href="#"> Interface Design </a>
+                  </li>
+                  <li>
+                    <a href="#"> Projects </a>
+                  </li>
+                  <li>
+                    <a href="#"> Schedule </a>
+                  </li>
+                  <li>
+                    <a href="#"> Resources </a>
+                  </li>
+                  <li>
+                    <a href="#"> Analytics </a>
+                  </li>
+                  <li>
+                    <a href="#"> Reset Password </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="logoutLink">
+          <a href="">Logout</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
