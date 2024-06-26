@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box; /* Box-sizing set to border-box for all elements */
+}
+
+body {
+  margin: auto; /* Center align the body content */
+  padding: 0; /* Remove default padding */
+  max-width: auto; /* Set maximum width for content */
+  background-color: #343434; /* Set background color for the body */
+}
+/* main container style */
+.mainContainer {
+  position: absolute;
+  background: white;
+  left: 318px;
+  right: 0; /* Adjust according to sidebar width */
+
+  height: 100px;
+  background: red;
+}
+.navTitle {
+  color: #000;
+  font-size: 36px;
+  font-weight: 500;
+  padding: 38px 50px;
+}
+.mainContent {
+  max-width: 900px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+.profileSection {
+  width: 600px;
+  border-radius: 40px;
+  background: #fff;
+}
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 35px 35px;
+}
+.profileInfo img {
+  width: 121px;
+}
+.btnProfileImg {
+  color: #000;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 8px 10px;
+  border-radius: 13px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  margin-bottom: 11px;
+}
+.profileImgtext {
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+}
+hr {
+  background-color: #ed1d61;
+  border-width: 0;
+  /*change your size in this place*/
+  padding-top: 1px;
+}
+.infoPadding {
+  padding: 15px 30px;
+}
+.infoContainer {
+  border-radius: 20px;
+  border: 1px solid #d9d9d9;
+  padding: 15px 23px;
+}
+.infoHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.personalInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+/* Button Save */
+.btnSave {
+  color: #000;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  border-radius: 11px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  padding: 8px 13px;
+  gap: 3px;
+}
+.personalInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  padding: 20px 0px 5px 3px;
+}
+.infoTitle {
+  color: #888;
+  font-size: 15px;
+  font-weight: 400;
+}
+.infoText {
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+}
+.themePreview {
+  padding: 20px;
+  border-radius: 40px;
+  background: #fff;
+}
