@@ -32,7 +32,8 @@
   gap: 20px;
 }
 .profileSection {
-  width: 550px; /* Adjust width */
+  width: 637px; /* Adjust width */
+
   border-radius: 40px;
   background: #fff;
 }
@@ -107,6 +108,39 @@ hr {
   padding: 8px 13px;
   gap: 3px;
 }
+/* Location Button */
+.btnLocation {
+  color: #000;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  border-radius: 11px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  padding: 8px 13px;
+  gap: 3px;
+  width: 100%;
+  margin-top: 25px;
+}
+/* PDF  */
+.btnPDF {
+  color: #000;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  border-radius: 11px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  padding: 8px 13px;
+  gap: 3px;
+  width: 100%;
+  margin-top: 25px;
+  cursor: pointer;
+}
 .personalInfo {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -122,6 +156,37 @@ hr {
   color: #000;
   font-size: 15px;
   font-weight: 400;
+}
+.bio {
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+/* Preview */
+.themePreview {
+  width: 448px; /* Adjust width */
+  height: 100vh;
+  padding: 10px;
+  border-radius: 40px;
+  background: #fff;
+}
+
+.themePreviewImg {
+  display: grid;
+
+  justify-content: center;
+  padding-top: 5px;
+}
+.themePreviewImg img {
+  width: 100%;
+  height: 85%;
+}
+.previedText {
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 23px 30px;
 }
 /* Navbar design for Mobile device */
 .navbar {
@@ -153,7 +218,7 @@ hr {
   line-height: 60px;
 
   opacity: 1;
-  transition: all 0.3s linear;
+  transition: all 0.9s linear;
 }
 .sidebarMenu .btnTwo i {
   font-size: 20px;
@@ -172,6 +237,7 @@ hr {
   width: 318px;
 
   background: #fff;
+  transition: all 0.3s linear;
   /* border-right: 1px solid #ccc; Add border for better separation */
 }
 /* sidebar logo */
