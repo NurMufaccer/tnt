@@ -198,16 +198,171 @@
                   </div>
                   <div class="">
                     <div>
-                      <label class="btnPDF" for="fileUpload">
-                        <img src="./images/PDF_Icon.png" alt="" />
-                        Thenetworktap.pdf
-                      </label>
+                      <button type="button" class="btnPDF" id="customBtn">
+                        <img src="./images/PDF_Icon.png" alt="" /><span
+                          id="customText"
+                          >Thenetworktap.pdf</span
+                        >
+                      </button>
                       <input
+                        id="file"
                         type="file"
-                        id="fileUpload"
-                        style="display: none"
                         accept=".pdf"
+                        hidden="hidden"
                       />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Image Container -->
+              <div class="infoContainer">
+                <div class="infoContainerWidth">
+                  <div class="infoHeader">
+                    <h3>Contact Info</h3>
+                    <button class="btnSave">
+                      <!-- btn Image -->
+                      <img src="./images/Save_icon.png" alt="" />Save
+                    </button>
+                  </div>
+                  <div class="imgContainer">
+                    <div>
+                      <div class="imgBox">
+                        <label for="imgInput">
+                          <img
+                            class="image"
+                            id="picUpload"
+                            src="./images/plus.PNG"
+                            alt="Upload Image"
+                          />
+                        </label>
+                        <input
+                          type="file"
+                          accept="image/jpeg, image/png, image/jpg"
+                          id="imgInput"
+                          hidden="hidden"
+                        />
+                      </div>
+                      <h3 class="imgTitle">Image 1</h3>
+                    </div>
+                    <div>
+                      <div class="imgBox">
+                        <label for="imgInput">
+                          <img
+                            class="image"
+                            id="picUpload"
+                            src="./images/plus.PNG"
+                            alt="Upload Image"
+                          />
+                        </label>
+                        <input
+                          type="file"
+                          accept="image/jpeg, image/png, image/jpg"
+                          id="imgInput"
+                          hidden="hidden"
+                        />
+                      </div>
+                      <h3 class="imgTitle">Image 2</h3>
+                    </div>
+                    <div>
+                      <div class="imgBox">
+                        <label for="imgInput">
+                          <img
+                            class="image"
+                            id="picUpload"
+                            src="./images/plus.PNG"
+                            alt="Upload Image"
+                          />
+                        </label>
+                        <input
+                          type="file"
+                          accept="image/jpeg, image/png, image/jpg"
+                          id="imgInput"
+                          hidden="hidden"
+                        />
+                      </div>
+                      <h3 class="imgTitle">Image 3</h3>
+                    </div>
+                    <div>
+                      <div class="imgBox">
+                        <label for="imgInput">
+                          <img
+                            class="image"
+                            id="picUpload"
+                            src="./images/plus.PNG"
+                            alt="Upload Image"
+                          />
+                        </label>
+                        <input
+                          type="file"
+                          accept="image/jpeg, image/png, image/jpg"
+                          id="imgInput"
+                          hidden="hidden"
+                        />
+                      </div>
+                      <h3 class="imgTitle">Image 4</h3>
+                    </div>
+                    <div>
+                      <div class="imgBox">
+                        <label for="imgInput">
+                          <img
+                            class="image"
+                            id="picUpload"
+                            src="./images/plus.PNG"
+                            alt="Upload Image"
+                          />
+                        </label>
+                        <input
+                          type="file"
+                          accept="image/jpeg, image/png, image/jpg"
+                          id="imgInput"
+                          hidden="hidden"
+                        />
+                      </div>
+                      <h3 class="imgTitle">Image 5</h3>
+                    </div>
+                    <div>
+                      <div class="imgBox">
+                        <label for="imgInput">
+                          <img
+                            class="image"
+                            id="picUpload"
+                            src="./images/plus.PNG"
+                            alt="Upload Image"
+                          />
+                        </label>
+                        <input
+                          type="file"
+                          accept="image/jpeg, image/png, image/jpg"
+                          id="imgInput"
+                          hidden="hidden"
+                        />
+                      </div>
+                      <h3 class="imgTitle">Image 6</h3>
+                    </div>
+                    <div>
+                      <div class="imgBox">
+                        <label for="imgInput">
+                          <img
+                            class="image"
+                            id="picUpload"
+                            src="./images/plus.PNG"
+                            alt="Upload Image"
+                          />
+                        </label>
+                        <input
+                          type="file"
+                          accept="image/jpeg, image/png, image/jpg"
+                          id="imgInput"
+                          hidden="hidden"
+                        />
+                      </div>
+                      <h3 class="imgTitle">Image 7</h3>
+                    </div>
+                    <div>
+                      <div class="imgBox">
+                        <img class="image" src="./images/plus.PNG" />
+                      </div>
+                      <h3 class="imgTitle">Image 8</h3>
                     </div>
                   </div>
                 </div>
@@ -405,5 +560,57 @@
         </div>
       </div>
     </div>
+    <script>
+      const realFileBtn = document.getElementById("file");
+      const customBtn = document.getElementById("customBtn");
+      const customText = document.getElementById("customText");
+
+      customBtn.addEventListener("click", function () {
+        realFileBtn.click();
+      });
+
+      realFileBtn.addEventListener("change", function () {
+        const file = realFileBtn.files[0];
+        if (file) {
+          const fileName = file.name;
+          const fileType = fileName.split(".").pop().toLowerCase();
+          if (fileType === "pdf") {
+            customText.innerHTML = fileName;
+          } else {
+            alert("Please select a PDF file.");
+            realFileBtn.value = ""; // Reset file input to clear the invalid selection
+            customText.innerHTML = "No file chosen";
+          }
+        } else {
+          customText.innerHTML = "No file chosen";
+        }
+      });
+      // let picUpload = document.getElementById("picUpload");
+      // let inputFile = document.getElementById("imgInput");
+
+      // inputFile.onchange = function () {
+      //   const file = inputFile.files[0];
+      //   const reader = new FileReader();
+
+      //   reader.onload = function (e) {
+      //     picUpload.src = e.target.result;
+      //   };
+
+      //   reader.readAsDataURL(file);
+      // };
+      let picUpload = document.getElementById("picUpload");
+      let inputFile = document.getElementById("imgInput");
+
+      inputFile.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function () {
+            picUpload.src = reader.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    </script>
   </body>
 </html>

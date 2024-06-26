@@ -13,12 +13,13 @@
 /* main container style */
 /* main container style */
 .mainContainer {
+  display: none;
   position: absolute;
   background: white;
   left: 318px;
   right: 0; /* Adjust according to sidebar width */
 
-  background: red;
+  background: #f5f5f5;
 }
 .navTitle {
   color: #000;
@@ -32,8 +33,8 @@
   gap: 20px;
 }
 .profileSection {
-  width: 637px; /* Adjust width */
-
+  /*  width: 620px;*/ /* Adjust width */
+  width: 56%;
   border-radius: 40px;
   background: #fff;
 }
@@ -107,6 +108,7 @@ hr {
   background: #fff;
   padding: 8px 13px;
   gap: 3px;
+  cursor: pointer;
 }
 /* Location Button */
 .btnLocation {
@@ -123,6 +125,7 @@ hr {
   gap: 3px;
   width: 100%;
   margin-top: 25px;
+  cursor: pointer;
 }
 /* PDF  */
 .btnPDF {
@@ -163,10 +166,39 @@ hr {
   font-weight: 400;
   margin-top: 20px;
 }
+.imgContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding-top: 25px;
+}
+.imgBox {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.image {
+  width: 80px;
+  height: 80px;
+  border-radius: 11px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  cursor: pointer;
+}
+.imgTitle {
+  color: #000;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 10px;
+}
 /* Preview */
 .themePreview {
-  width: 448px; /* Adjust width */
-  height: 100vh;
+  /* width: 438px; */ /* Adjust width */
+  width: 42%;
+  height: 712px;
   padding: 10px;
   border-radius: 40px;
   background: #fff;
@@ -174,13 +206,12 @@ hr {
 
 .themePreviewImg {
   display: grid;
-
   justify-content: center;
   padding-top: 5px;
 }
 .themePreviewImg img {
   width: 100%;
-  height: 85%;
+  height: 100%;
 }
 .previedText {
   color: #000;
@@ -325,7 +356,13 @@ hr {
 }
 
 /* For large devices (desktops and laptops) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .themePreview {
+    height: 680px;
+  }
+  .imgContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .sidebarMenu .menu ul li {
     padding: 7px;
   }
@@ -334,7 +371,19 @@ hr {
   }
 }
 /* For medium devices (tablets) */
-@media only screen and (min-width: 768px) and (max-width: 1199px) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .profileInfo {
+    flex-direction: column;
+  }
+  .contactInfo {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .personalInfo {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .themePreview {
+    height: 500px;
+  }
   .sidebarMenu .menu ul li {
     padding: 7px;
   }
