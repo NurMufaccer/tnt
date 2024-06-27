@@ -1,77 +1,97 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-body {
-  margin: auto; /* Center align the body content */
-  padding: 0; /* Remove default padding */
-  /* Set maximum width for content */
-  background: #f5f5f5;
-}
-.mainBox {
-  position: relative;
 }
 
 /* main container style */
+
 .mainContainer {
   position: absolute;
-  background: white;
-  left: 318px; /* Adjust according to sidebar width */
-  background: red;
-  width: calc(100% - 318px);
-}
 
+  left: 318px;
+  right: 0; /* Adjust according to sidebar width */
+
+  background: #f5f5f5;
+}
 .navTitle {
   color: #000;
   font-size: 36px;
   font-weight: 500;
-  padding: 38px 50px;
+  padding: 30px 50px;
 }
 .mainContent {
   padding: 20px;
   display: flex;
   gap: 20px;
 }
-.profileSection {
-  width: 637px;
+.projectsSection {
+  /*  width: 620px;*/ /* Adjust width */
+  width: 56%;
+}
+.projectsContainer {
   border-radius: 40px;
-  background: #fff;
-  padding: 35px 38px;
+
+  padding: 0px 10px;
+  margin-bottom: 15px;
 }
-.profileInfo {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-.profileInfo img {
-  width: 121px;
-}
-.btnProfileImg {
+.projectsContainerHeader {
   color: #000;
-  text-align: center;
-  font-size: 15px;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 0px 10px;
+}
+.project {
+  height: auto;
+  position: relative;
+  border-radius: 40px;
+}
+.project img {
+  width: 100%;
+  border-radius: 40px;
+}
+.projectInfo {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
+.projectTitle {
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 0;
+}
+.projectDescription {
+  color: #fff;
+  font-size: 20px;
   font-weight: 400;
-  padding: 10px;
-  border-radius: 13px;
-  border: 1px solid #d9d9d9;
-  background: #fff;
-  margin-bottom: 11px;
 }
-.profileImgtext {
-  color: #000;
-  font-size: 15px;
-  font-weight: 400;
-}
-hr {
-  background-color: #ed1d61;
-  border-width: 0;
-  /*change your size in this place*/
-  padding-top: 1px;
-}
-/* Preview Design */
+
+/* Preview */
 .themePreview {
-  width: 448px;
+  /* width: 438px; */ /* Adjust width */
+  width: 42%;
+  height: 712px;
+  padding: 10px;
   border-radius: 40px;
   background: #fff;
+}
+
+.themePreviewImg {
+  display: grid;
+  justify-content: center;
+  padding-top: 5px;
+}
+.themePreviewImg img {
+  width: 100%;
+  height: 100%;
+}
+.previewText {
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 20px 30px;
 }
 /* Navbar design for Mobile device */
 .navbar {
@@ -103,7 +123,7 @@ hr {
   line-height: 60px;
 
   opacity: 1;
-  transition: all 0.3s linear;
+  transition: all 0.9s linear;
 }
 .sidebarMenu .btnTwo i {
   font-size: 20px;
@@ -122,6 +142,7 @@ hr {
   width: 318px;
 
   background: #fff;
+  transition: all 0.3s linear;
   /* border-right: 1px solid #ccc; Add border for better separation */
 }
 /* sidebar logo */
@@ -133,23 +154,25 @@ hr {
   position: absolute;
   width: 120px;
   padding-top: 35px;
-  padding-left: 35px; /* Add padding for better positioning */
+  padding-left: 35px;
 }
 .sidebarMenu .logo .logoTag {
   display: none;
 }
 .sidebarMenu .menu {
   position: absolute;
-  top: 85px;
+  top: 95px;
   width: 100%;
   padding: 14px 45px 14px 33px;
 }
-
+.largeView > li {
+  padding-bottom: 30px;
+}
 .sidebarMenu .menu .menuTag {
   color: #888; /* Set color for menu text */
   font-size: 20px;
   font-weight: 400;
-  padding: 7px;
+  padding: 10px 17px;
 }
 
 .sidebarMenu .menu ul {
@@ -157,11 +180,9 @@ hr {
   padding: 0;
   margin: 0;
 }
-.sidebarMenu .menu ul li {
-  padding: 30px;
-}
-.sidebarMenu .menu .subMenu ul li {
-  padding: 7px;
+
+.sidebarMenu .menu .subMenu ul li a {
+  padding: 7px 10px;
   transition: all 0.2s linear;
 }
 .sidebarMenu .menu .menuChild {
@@ -179,7 +200,7 @@ hr {
   font-weight: 400;
   text-decoration: none;
 }
-.sidebarMenu .menu .subMenu li:hover {
+.sidebarMenu .menu .subMenu li a:hover {
   border-radius: 20px;
   border: 1px solid #d9d9d9;
 }
@@ -209,25 +230,51 @@ hr {
 }
 
 /* For large devices (desktops and laptops) */
-@media only screen and (min-width: 1200px) {
-  .sidebarMenu .menu ul li {
-    padding: 7px;
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  themeContainerHeader {
+    padding: 0px;
   }
-  .sidebarMenu .menu .subMenu ul li {
-    padding: 5px;
+
+  .interfaceContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sidebarMenu .menu {
+    top: 85px;
+  }
+  .sidebarMenu .menu .menuTag {
+    padding: 10px 17px;
+  }
+  .largeView > li {
+    padding-bottom: 15px;
+  }
+  .sidebarMenu .menu .subMenu ul li a {
+    padding: 5px 15px;
   }
 }
 /* For medium devices (tablets) */
-@media only screen and (min-width: 768px) and (max-width: 1199px) {
-  .sidebarMenu .menu ul li {
-    padding: 7px;
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  themeContainerHeader {
+    padding: 0px;
   }
+
+  .interfaceContainer {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 10px;
+  }
+  .themePreview {
+    height: 500px;
+  }
+
   .sidebarMenu .menu .subMenu ul li {
     padding: 5px;
   }
 }
 /* For small devices (landscape phones) */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
+  .interfaceContainer {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 10px;
+  }
   .largeView {
     display: none;
   }

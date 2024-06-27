@@ -1,119 +1,465 @@
 * {
-  box-sizing: border-box; /* Box-sizing set to border-box for all elements */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  margin: auto; /* Center align the body content */
-  padding: 0; /* Remove default padding */
-  max-width: auto; /* Set maximum width for content */
-  background-color: #343434; /* Set background color for the body */
-}
 /* main container style */
+
 .mainContainer {
   position: absolute;
   background: white;
   left: 318px;
   right: 0; /* Adjust according to sidebar width */
 
-  height: 100px;
-  background: red;
+  background: #f5f5f5;
 }
 .navTitle {
   color: #000;
   font-size: 36px;
   font-weight: 500;
-  padding: 38px 50px;
+  padding: 30px 50px;
 }
 .mainContent {
-  max-width: 900px;
   padding: 20px;
   display: flex;
   gap: 20px;
 }
-.profileSection {
-  width: 600px;
+.themeSection {
+  /*  width: 620px;*/ /* Adjust width */
+  width: 56%;
+}
+.themeContainer {
+  border-radius: 40px;
+  background: #fff;
+  padding: 25px 35px;
+  margin-bottom: 15px;
+}
+.themeContainerHeader {
+  color: #000;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 0px 10px;
+}
+
+.interfaceContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+}
+.interfacePreview {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.btnPrimary {
+  border: none;
+  background: #fff;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.btnPrimary:hover {
+  border-radius: 24px;
+  border: 1px solid #000;
+}
+.interfaceName {
+  color: #000;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+}
+.themeColorContainer {
+  border-radius: 40px;
+  background: #fff;
+  padding: 23px 35px;
+}
+.bgTitle {
+  color: #000;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 0px 12px;
+}
+.colorContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px 15px;
+}
+.colorDiv {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.colorDiv:hover {
+  border: 1px solid #000;
+  border-radius: 100%;
+}
+.colorPik {
+  background: #d9d9d9;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.colorW {
+  background: #fff;
+}
+.colorB {
+  background: #2e56a5;
+}
+.colorBl {
+  background: #222;
+}
+.colorS {
+  background: #2088ca;
+}
+.colorY {
+  background: #f7cb31;
+}
+
+/* Preview */
+.themePreview {
+  /* width: 438px; */ /* Adjust width */
+  width: 42%;
+  height: 712px;
+  padding: 10px;
   border-radius: 40px;
   background: #fff;
 }
-.profileInfo {
+
+.themePreviewImg {
+  display: grid;
+  justify-content: center;
+  padding-top: 5px;
+}
+.themePreviewImg img {
+  width: 100%;
+  height: 100%;
+}
+.previewText {
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 20px 30px;
+}
+/* Navbar design for Mobile device */
+.navbar {
+  display: none; /* This hides the navbar */
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: 100px;
+}
+.navbar .navLogo {
+  width: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar .navLogo img {
+  max-height: 100%; /* Ensure the logo does not exceed the navbar height */
+  max-width: 100%; /* Ensure the logo does not exceed its container */
+}
+/* hamburger menu */
+#check {
+  display: none;
+}
+.mainBox .btnOne {
+  color: #000;
+  position: absolute;
+  left: 16px;
+  line-height: 60px;
+
+  opacity: 1;
+  transition: all 0.9s linear;
+}
+.sidebarMenu .btnTwo i {
+  font-size: 20px;
+  line-height: 120px;
+  position: absolute;
+  left: 221px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s linear;
+  color: #000;
+}
+/* Sidebar design */
+.sidebarMenu {
+  position: fixed;
+  height: 100vh;
+  width: 318px;
+
+  background: #fff;
+  transition: all 0.3s linear;
+  /* border-right: 1px solid #ccc; Add border for better separation */
+}
+/* sidebar logo */
+.sidebarMenu .logo {
+  position: absolute;
+  width: 100%;
+}
+.sidebarMenu .logo img {
+  position: absolute;
+  width: 120px;
+  padding-top: 35px;
+  padding-left: 35px;
+}
+.sidebarMenu .logo .logoTag {
+  display: none;
+}
+.sidebarMenu .menu {
+  position: absolute;
+  top: 95px;
+  width: 100%;
+  padding: 14px 45px 14px 33px;
+}
+.largeView > li {
+  padding-bottom: 30px;
+}
+.sidebarMenu .menu .menuTag {
+  color: #888; /* Set color for menu text */
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px 17px;
+}
+
+.sidebarMenu .menu ul {
+  list-style-type: none; /* Remove default list style (usually bullet points) */
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarMenu .menu .subMenu ul li a {
+  padding: 7px 10px;
+  transition: all 0.2s linear;
+}
+.sidebarMenu .menu .menuChild {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 35px 35px;
+  gap: 10px;
 }
-.profileInfo img {
-  width: 121px;
+.sidebarMenu .menu .menuChild img {
+  width: 39px;
+  height: 39px;
 }
-.btnProfileImg {
+.sidebarMenu .menu a {
   color: #000;
-  text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
-  padding: 8px 10px;
-  border-radius: 13px;
-  border: 1px solid #d9d9d9;
-  background: #fff;
-  margin-bottom: 11px;
+  text-decoration: none;
 }
-.profileImgtext {
-  color: #000;
-  font-size: 15px;
-  font-weight: 400;
-}
-hr {
-  background-color: #ed1d61;
-  border-width: 0;
-  /*change your size in this place*/
-  padding-top: 1px;
-}
-.infoPadding {
-  padding: 15px 30px;
-}
-.infoContainer {
+.sidebarMenu .menu .subMenu li a:hover {
   border-radius: 20px;
   border: 1px solid #d9d9d9;
-  padding: 15px 23px;
 }
-.infoHeader {
-  display: flex;
-  justify-content: space-between;
+/* sidebar bottom for mobile device */
+.sidebarMenu .logoutLink {
+  display: none;
+  position: absolute;
+
+  bottom: 15px;
+  width: 100%;
+  padding: 14px 45px 0px 33px;
 }
-.personalInfo {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-/* Button Save */
-.btnSave {
+.sidebarMenu .logoutLink a {
   color: #000;
-  text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
-  display: flex;
-  align-items: center;
-  border-radius: 11px;
-  border: 1px solid #d9d9d9;
-  background: #fff;
-  padding: 8px 13px;
-  gap: 3px;
+  text-decoration-line: underline;
+  transition: all 0.3s linear;
 }
-.personalInfo {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  padding: 20px 0px 5px 3px;
+/* large Screen View */
+.largeView {
+  display: block;
 }
-.infoTitle {
-  color: #888;
-  font-size: 15px;
-  font-weight: 400;
+/* mobile View */
+.mobileView {
+  display: none;
 }
-.infoText {
-  color: #000;
-  font-size: 15px;
-  font-weight: 400;
+
+/* For large devices (desktops and laptops) */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  themeContainerHeader {
+    padding: 0px;
+  }
+
+  .interfaceContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sidebarMenu .menu {
+    top: 85px;
+  }
+  .sidebarMenu .menu .menuTag {
+    padding: 10px 17px;
+  }
+  .largeView > li {
+    padding-bottom: 15px;
+  }
+  .sidebarMenu .menu .subMenu ul li a {
+    padding: 5px 15px;
+  }
 }
-.themePreview {
-  padding: 20px;
-  border-radius: 40px;
-  background: #fff;
+/* For medium devices (tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  themeContainerHeader {
+    padding: 0px;
+  }
+
+  .interfaceContainer {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 10px;
+  }
+  .themePreview {
+    height: 500px;
+  }
+
+  .sidebarMenu .menu .subMenu ul li {
+    padding: 5px;
+  }
+}
+/* For small devices (landscape phones) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .interfaceContainer {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 10px;
+  }
+  .largeView {
+    display: none;
+  }
+  .mobileView {
+    display: block;
+  }
+  .sidebarMenu {
+    width: 280px;
+    left: -280px;
+  }
+  .sidebarMenu .menu {
+    position: absolute;
+    top: 160px;
+    width: 100%;
+    padding: 14px 45px 14px 0px;
+  }
+  .sidebarMenu .menu ul li {
+    padding: 30px;
+  }
+  .sidebarMenu .menu .subMenu ul li {
+    padding: 5px;
+    transition: all 0.2s linear;
+  }
+  .sidebarMenu .menu a:hover {
+    font-weight: 600;
+  }
+  .sidebarMenu .menu .subMenu li:hover {
+    border: none;
+  }
+  .sidebarMenu .logo img {
+    position: absolute;
+    width: 100px;
+    padding-top: 55px;
+    padding-left: 35px; /* Add padding for better positioning */
+  }
+  .sidebarMenu .logo .logoTag {
+    display: block;
+    color: #000;
+    width: 231px;
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 110px;
+    padding-left: 35px;
+  }
+  .sidebarMenu .menu a {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  #check:checked ~ .sidebarMenu {
+    left: 0px;
+  }
+  #check:checked ~ .btnOne {
+    opacity: 0;
+  }
+  #check:checked ~ .sidebarMenu .btnTwo i {
+    opacity: 1;
+  }
+  .sidebarMenu .logoutLink {
+    display: block;
+  }
+}
+
+/* For extra small devices (portrait phones) */
+@media only screen and (max-width: 575px) {
+  .navbar {
+    display: block; /* Display the navbar for mobile devices */
+    display: flex; /* Conflicting redeclaration */
+    justify-content: center;
+    align-items: center;
+  }
+  .largeView {
+    display: none;
+  }
+  .mobileView {
+    display: block;
+  }
+
+  .sidebarMenu {
+    width: 280px;
+    left: -280px;
+    background: #f5f5f5;
+  }
+  .sidebarMenu .menu {
+    position: absolute;
+    top: 160px;
+    width: 100%;
+    padding: 14px 45px 14px 0px;
+  }
+  .sidebarMenu .menu ul li {
+    padding: 30px;
+  }
+  .sidebarMenu .menu .subMenu ul li {
+    padding: 5px;
+    transition: all 0.2s linear;
+  }
+  .sidebarMenu .menu a:hover {
+    font-weight: 600;
+  }
+  .sidebarMenu .menu .subMenu li:hover {
+    border: none;
+  }
+  .sidebarMenu .logo img {
+    position: absolute;
+    width: 100px;
+    padding-top: 55px;
+    padding-left: 35px; /* Add padding for better positioning */
+  }
+  .sidebarMenu .logo .logoTag {
+    display: block;
+    color: #000;
+    width: 231px;
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 110px;
+    padding-left: 35px;
+  }
+  .sidebarMenu .menu a {
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  #check:checked ~ .sidebarMenu {
+    left: 0px;
+  }
+  #check:checked ~ .btnOne {
+    opacity: 0;
+  }
+  #check:checked ~ .sidebarMenu .btnTwo i {
+    opacity: 1;
+  }
+  .sidebarMenu .logoutLink {
+    display: block;
+  }
 }
