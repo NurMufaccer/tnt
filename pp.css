@@ -20,6 +20,11 @@
   font-weight: 500;
   padding: 30px 50px;
 }
+.mainContent {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
 .main {
   max-width: 380px;
   min-height: 100vh;
@@ -237,6 +242,31 @@ hr {
   font-size: 15px;
   font-weight: 400;
   padding: 10px;
+}
+/* Preview */
+.themePreview {
+  /* width: 438px; */ /* Adjust width */
+  width: 42%;
+  height: 712px;
+  padding: 10px;
+  border-radius: 40px;
+  background: #fff;
+}
+
+.themePreviewImg {
+  display: grid;
+  justify-content: center;
+  padding-top: 5px;
+}
+.themePreviewImg img {
+  width: 100%;
+  height: 100%;
+}
+.previewText {
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 20px 30px;
 }
 /* Navbar design for Mobile device */
 .navbar {
