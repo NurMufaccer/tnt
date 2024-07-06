@@ -4,58 +4,66 @@
   box-sizing: border-box;
 }
 
-/* main container style */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
 
+/* Main Container */
 .mainContainer {
   position: absolute;
   left: 318px;
-  right: 0; /* Adjust according to sidebar width */
-
+  right: 0;
   background: #f5f5f5;
 }
+
 .navTitle {
   color: #000;
   font-size: 36px;
   font-weight: 500;
   padding: 30px 50px;
 }
+
 .mainContent {
   padding: 20px;
   display: flex;
   gap: 20px;
 }
-.themeSection {
-  /*  width: 620px;*/ /* Adjust width */
-  width: 56%;
-}
-.themeContainer {
-  border-radius: 40px;
-  background: #fff;
-  padding: 25px 35px;
-  margin-bottom: 15px;
-}
-/* float button */
+
+/* Floating Button */
 .floatBtnContainer {
   display: none;
 }
+
 .btnFloat {
-  width: 100%;
   position: fixed;
   bottom: 40px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
 }
-.floatSave span {
-  color: #fff;
-  text-align: center;
+
+.floatSave span,
+.floatPreview span {
   font-size: 16px;
   font-weight: 500;
-  border: none;
-  border-radius: 20px;
-  background: #000;
   padding: 10px 40px;
   cursor: pointer;
+  border-radius: 20px;
+  display: block;
+  text-align: center;
+}
+
+.floatSave span {
+  background: #000;
+  color: #fff;
+}
+
+.floatPreview span {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
 }
 
 .success {
@@ -77,55 +85,54 @@
   align-items: center;
   justify-content: center;
 }
+
 .floatSave.active + .success {
   opacity: 1;
   visibility: visible;
   transition: 0.3s;
 }
-.floatPreview span {
-  color: #000;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 20px;
-  border: 1px solid #000;
-  background: #fff;
-  padding: 10px 40px;
-  cursor: pointer;
-}
+
 .success img {
   margin-right: 10px;
 }
+
+/* Popup */
 .popup {
   position: fixed;
   top: -100vh;
-  left: 0px;
+  left: 0;
   width: 100%;
   height: 100%;
   transition: top 0.3s ease-in-out 0.2s;
   z-index: 100;
 }
-.popup .btnClose {
+
+.popup .btnClose,
+.popup .overlay {
   position: absolute;
+}
+
+.popup .btnClose {
   right: 20px;
   top: 20px;
   font-size: 20px;
   color: #000;
-  font-weight: 500px;
+  font-weight: 500;
   background: #fff;
   border: none;
 }
+
 .popup .overlay {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.7);
   opacity: 0;
   transition: opacity 0.1s ease-in-out 0.2s;
-  z-index: 101; /* Ensure the overlay is above the popup container */
+  z-index: 101;
 }
+
 .popup .popup-content {
   position: absolute;
   top: 50%;
@@ -139,222 +146,68 @@
   opacity: 0;
   border: none;
   transition: all 0.3s ease-in-out;
-  z-index: 102; /* Ensure the content is above the overlay */
+  z-index: 102;
 }
+
 .popup .popup-content img {
   width: 100%;
   height: 100%;
 }
+
 .popup.active {
-  top: 0px;
+  top: 0;
   transition: top 0s ease-in-out 0s;
 }
+
 .popup.active .overlay {
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
+
 .popup.active .popup-content {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
 
-/* Container */
-.themeContainerHeader {
-  color: #000;
-  font-size: 24px;
-  font-weight: 500;
-  padding: 0px 10px;
-}
-
-.interfaceContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 20px;
-}
-.interfacePreview {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-}
-.btnPrimary {
-  border: none;
-  background: #fff;
-  padding: 8px;
-  cursor: pointer;
-  transition: all 0.2s linear;
-}
-.btnPrimary:hover {
-  border-radius: 24px;
-  border: 1px solid #000;
-}
-.interfaceName {
-  color: #000;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 500;
-  padding: 10px;
-}
-.themeColorContainer {
-  border-radius: 40px;
-  background: #fff;
-  padding: 23px 35px;
-}
-.bgTitle {
-  color: #000;
-  font-size: 24px;
-  font-weight: 500;
-  padding: 0px 12px;
-}
-.colorContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 20px 15px;
-}
-.colorDiv {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  cursor: pointer;
-}
-.colorDiv:hover {
-  border: 1px solid #000;
-  border-radius: 100%;
-}
-.colorPik {
-  background: #d9d9d9;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-}
-.colorW {
-  background: #fff;
-  border: 1px solid #d9d9d9;
-}
-.colorB {
-  background: #2e56a5;
-}
-.colorBl {
-  background: #222;
-}
-.colorS {
-  background: #2088ca;
-}
-.colorY {
-  background: #f7cb31;
-}
-
-/* Preview */
-.themePreview {
-  /* width: 438px; */ /* Adjust width */
-  width: 42%;
-  height: 712px;
-  padding: 10px;
-  border-radius: 40px;
-  background: #fff;
-}
-
-.themePreviewImg {
-  display: grid;
-  justify-content: center;
-  padding-top: 5px;
-}
-.themePreviewImg img {
-  width: 100%;
-  height: 100%;
-}
-.previewText {
-  color: #000;
-  font-size: 24px;
-  font-weight: 600;
-  padding: 20px 30px;
-}
-/* Navbar design for Mobile device */
-.navbar {
-  display: none; /* This hides the navbar */
-  position: fixed;
-  background: white;
-  width: 100%;
-  height: 100px;
-}
-.navbar .navLogo {
-  width: 60px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.navbar .navLogo img {
-  max-height: 100%; /* Ensure the logo does not exceed the navbar height */
-  max-width: 100%; /* Ensure the logo does not exceed its container */
-}
-/* hamburger menu */
-#check {
-  display: none;
-}
-.mainBox .btnOne {
-  color: #000;
-  position: absolute;
-  left: 16px;
-  line-height: 60px;
-
-  opacity: 1;
-  transition: all 0.9s linear;
-}
-.sidebarMenu .btnTwo i {
-  font-size: 20px;
-  line-height: 120px;
-  position: absolute;
-  left: 221px;
-  cursor: pointer;
-  opacity: 0;
-  transition: all 0.3s linear;
-  color: #000;
-}
-/* Sidebar design */
+/* Sidebar */
 .sidebarMenu {
   position: fixed;
   height: 100vh;
   width: 318px;
-
   background: #fff;
   transition: all 0.3s linear;
-  /* border-right: 1px solid #ccc; Add border for better separation */
 }
-/* sidebar logo */
+
 .sidebarMenu .logo {
   position: absolute;
   width: 100%;
+  padding: 35px 35px 0;
 }
+
 .sidebarMenu .logo img {
-  position: absolute;
   width: 120px;
-  padding-top: 35px;
-  padding-left: 35px;
 }
+
 .sidebarMenu .logo .logoTag {
   display: none;
 }
+
 .sidebarMenu .menu {
   position: absolute;
   top: 95px;
   width: 100%;
   padding: 14px 45px 14px 33px;
 }
-.largeView > li {
-  padding-bottom: 30px;
-}
+
 .sidebarMenu .menu .menuTag {
-  color: #888; /* Set color for menu text */
+  color: #888;
   font-size: 20px;
   font-weight: 400;
   padding: 10px 17px;
 }
 
 .sidebarMenu .menu ul {
-  list-style-type: none; /* Remove default list style (usually bullet points) */
+  list-style-type: none;
   padding: 0;
   margin: 0;
 }
@@ -363,45 +216,36 @@
   padding: 7px 10px;
   transition: all 0.2s linear;
 }
+
 .sidebarMenu .menu .menuChild {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .sidebarMenu .menu .menuChild img {
   width: 39px;
   height: 39px;
 }
+
 .sidebarMenu .menu a {
   color: #000;
   font-size: 18px;
   font-weight: 400;
   text-decoration: none;
 }
+
 .sidebarMenu .menu .subMenu li a:hover {
   border-radius: 20px;
   border: 1px solid #d9d9d9;
 }
-/* sidebar bottom for mobile device */
-.sidebarMenu .logoutLink {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  width: 100%;
-  padding: 14px 0px 0px 33px;
-}
-.sidebarMenu .logoutLink a {
-  color: #000;
-  font-size: 18px;
-  font-weight: 400;
-  text-decoration-line: underline;
-  transition: all 0.3s linear;
-}
-/* large Screen View */
+
+/* Large Screen View */
 .largeView {
   display: block;
 }
-/* mobile View */
+
+/* Mobile View */
 .mobileView {
   display: none;
 }

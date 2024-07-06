@@ -26,7 +26,7 @@
             </p>
 
             <div class="floatPreview" id="openPopup3"><span>Preview</span></div>
-            <div class="popup" id="popupAddTask">
+            <div class="popup" id="popupPreview">
               <div class="overlay"></div>
               <div class="popup-content">
                 <img src="../assets/images/Interface_1_1.png" alt="" />
@@ -40,64 +40,104 @@
           <h3 class="navTitle">Interface Design</h3>
         </nav>
         <div class="mainContent">
-          <div class="themeSection">
-            <div class="themeContainer">
-              <h3 class="themeContainerHeader">Choose Your Theme</h3>
+          <!-- Projects Preview -->
+          <div class="projectPreview">
+            <div>
+              <h3 class="chartContainerHeading">Projects Worked</h3>
+              <div class="chartContainer">
+                <div class="chartBox">
+                  <canvas id="myChart"></canvas>
+                </div>
+                <div class="chartDetails">
+                  <ul></ul>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="toDoContainer">
+              <div class="toDoHeader">
+                <h3>To-do List</h3>
+                <button class="btnManage">Manage ></button>
+              </div>
+              <div class="schedule">
+                <h3>09:30AM</h3>
+                <p>Site Check @ Woodlands</p>
+              </div>
+              <div class="schedule">
+                <h3>11:00AM</h3>
+                <p>Client Zoom Meeting</p>
+              </div>
+              <div class="schedule">
+                <h3>04:15PM</h3>
+                <p>Do up 3d rendering for Woodlands</p>
+              </div>
 
-              <div class="interfaceContainer">
-                <div class="interfacePreview">
-                  <button class="btnPrimary">
-                    <!-- btn Image -->
-                    <img src="./images/Interface_01.png" alt="" />
-                  </button>
-                  <p class="interfaceName">Interface 1</p>
-                </div>
-                <div class="interfacePreview">
-                  <button class="btnPrimary">
-                    <!-- btn Image -->
-                    <img src="./images/Interface_02.png" alt="" />
-                  </button>
-                  <p class="interfaceName">Interface 2</p>
-                </div>
-                <div class="interfacePreview">
-                  <button class="btnPrimary">
-                    <!-- btn Image -->
-                    <img src="./images/Interface_03.png" alt="" />
-                  </button>
-                  <p class="interfaceName">Interface 3</p>
-                </div>
-              </div>
-            </div>
-            <div class="themeColorContainer">
-              <div class="backgroundColor">
-                <h3 class="bgTitle">Background Color</h3>
-                <div class="colorContainer">
-                  <div class="colorDiv colorPik">
-                    <img src="./images/image_80.png" alt="" />
+              <!-- popup -->
+              <button id="openPopup2" class="btnAddTask">Add Task</button>
+              <div class="popup" id="popupAddTask">
+                <div class="overlay"></div>
+                <div class="popup-content">
+                  <h3>Add New Task</h3>
+
+                  <div class="taskPopupContainer">
+                    <img src="./images/image_66.png" alt="" />
+                    <div class="searchInput">
+                      <input type="text" placeholder="Task Title" />
+
+                      <button class="btn btn-secondary" type="button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                    </div>
                   </div>
-                  <div class="colorDiv colorW"></div>
-                  <div class="colorDiv colorB"></div>
-                  <div class="colorDiv colorBl"></div>
-                </div>
-              </div>
-              <div class="backgroundColor">
-                <h3 class="bgTitle">Accent & Icon Color</h3>
-                <div class="colorContainer">
-                  <div class="colorDiv colorPik">
-                    <img src="./images/image_80.png" alt="" />
+                  <div class="taskPopupContainer">
+                    <img src="./images/image_60.png" alt="" />
+                    <div class="scheduleInput">
+                      <input
+                        class="inputDate"
+                        type="text"
+                        placeholder="Start Date"
+                      />
+                      <input
+                        class="inputTime"
+                        type="text"
+                        placeholder="Start time"
+                      />
+                      <p>-</p>
+                      <input
+                        class="inputTime"
+                        type="text"
+                        placeholder="Start time"
+                      />
+                      <input
+                        class="inputDate"
+                        type="text"
+                        placeholder="Start Date"
+                      />
+                    </div>
                   </div>
-                  <div class="colorDiv colorS"></div>
-                  <div class="colorDiv colorY"></div>
-                  <div class="colorDiv colorBl"></div>
+                  <div class="taskPopupContainer">
+                    <img src="./images/image_58.png" alt="" />
+                    <div class="searchInput">
+                      <input type="text" placeholder="Recommended Duration: " />
+                    </div>
+                  </div>
+                  <div class="textareaPopupContainer">
+                    <img src="./images/image_59.png" alt="" />
+                    <div class="searchInput">
+                      <textarea
+                        name=""
+                        rows="6"
+                        placeholder="Description"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div class="controls">
+                    <button class="btnClose">Cancel</button>
+                    <button class="btnSubmit">Save</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- Preview -->
-          <div class="themePreview">
-            <h3 class="previewText">Preview</h3>
-            <div class="themePreviewImg">
-              <img src="./images/Interface 1 1.png" alt="" />
             </div>
           </div>
         </div>
@@ -235,79 +275,77 @@
           </ul>
           <!-- Mobile View -->
           <ul class="mobileView">
+            <!-- Profile li-->
             <li>
+              <p class="menuTag">Profile</p>
               <div class="subMenu">
                 <ul>
                   <li>
-                    <a href="#"> Edit Profile </a>
+                    <a class="menuChild" href="#">
+                      <img src="./images/profileLogo.png" alt="" />
+                      <p>Edit Profile</p>
+                    </a>
                   </li>
                   <li>
-                    <a href="#"> Interface Design </a>
+                    <a class="menuChild" href="#">
+                      <img src="./images/InterfaceDesignLogo.png" alt="" />
+                      <p>Interface Design</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- Work li-->
+            <li>
+              <p class="menuTag">Work</p>
+              <div class="subMenu">
+                <ul>
+                  <li>
+                    <a class="menuChild" href="#">
+                      <img src="./images/projects.png" alt="" />
+                      <p>Projects</p>
+                    </a>
                   </li>
                   <li>
-                    <a href="#"> Projects </a>
+                    <a class="menuChild" href="#">
+                      <img src="./images/schedule.png" alt="" />
+                      <p>Schedule</p>
+                    </a>
                   </li>
                   <li>
-                    <a href="#"> Schedule </a>
+                    <a class="menuChild" href="#">
+                      <img src="./images/Resources.png" alt="" />
+                      <p>Resources</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <!-- Others li-->
+            <li>
+              <p class="menuTag">Others</p>
+              <div class="subMenu">
+                <ul>
+                  <li>
+                    <a class="menuChild" href="#">
+                      <img src="./images/analytics.png" alt="" />
+                      <p>Analytics</p>
+                    </a>
                   </li>
                   <li>
-                    <a href="#"> Resources </a>
-                  </li>
-                  <li>
-                    <a href="#"> Analytics </a>
-                  </li>
-                  <li>
-                    <a href="#"> Reset Password </a>
+                    <a class="menuChild" href="#">
+                      <img src="./images/reset pw.png" alt="" />
+                      <p>Reset Password</p>
+                    </a>
                   </li>
                 </ul>
               </div>
             </li>
           </ul>
         </div>
-
-        <div class="logoutLink">
-          <a href="">Logout</a>
-        </div>
       </div>
     </div>
-    <script>
-      //  Save button
-      function flotAction() {
-        let action = document.querySelector(".floatSave");
-        action.classList.toggle("active");
-      }
-
-      //  preview button
-      document.addEventListener("DOMContentLoaded", (event) => {
-        // Function to open a popup
-        function openPopup(popupId) {
-          document.getElementById(popupId).classList.add("active");
-        }
-
-        // Function to close a popup
-        function closePopup(popupId) {
-          document.getElementById(popupId).classList.remove("active");
-        }
-
-        // Add event listener for "Add Task" button
-        document.getElementById("openPopup3").addEventListener("click", () => {
-          openPopup("popupAddTask");
-        });
-
-        // Add event listeners for "Close" buttons
-        document.querySelectorAll(".btnClose").forEach((button) => {
-          button.addEventListener("click", () => {
-            closePopup(button.closest(".popup").id);
-          });
-        });
-
-        // Add event listeners for overlays
-        document.querySelectorAll(".popup .overlay").forEach((overlay) => {
-          overlay.addEventListener("click", () => {
-            closePopup(overlay.closest(".popup").id);
-          });
-        });
-      });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
