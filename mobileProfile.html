@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .main {
+        max-width: 380px;
+        min-height: 100vh;
+        background: #fff;
+        margin: auto;
+      }
+      .btnFloat {
+        width: 380px;
+        position: fixed;
+        bottom: 0px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+      }
+      .floatSave span {
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        border-radius: 20px;
+        background: #000;
+        padding: 10px 40px;
+        cursor: pointer;
+      }
+      .success {
+        position: absolute;
+        bottom: 55px;
+        width: 90%;
+        height: 40px;
+        color: #3b7850;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 1px solid #3b7850;
+        background: #effdf3;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .floatSave.active + .success {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s;
+      }
+      .floatPreview span {
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 20px;
+        border: 1px solid #000;
+        background: #fff;
+        padding: 10px 40px;
+        cursor: pointer;
+      }
+      .success img {
+        margin-right: 10px;
+      }
+      .popup {
+        position: fixed;
+        top: -100vh;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        transition: top 0.3s ease-in-out 0.2s;
+        z-index: 100;
+      }
+      .popup .btnClose {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 20px;
+        color: #000;
+        font-weight: 500px;
+        background: #fff;
+        border: none;
+      }
+      .popup .overlay {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.7);
+        opacity: 0;
+        transition: opacity 0.1s ease-in-out 0.2s;
+        z-index: 101; /* Ensure the overlay is above the popup container */
+      }
+      .popup .popup-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.15);
+        width: 95%;
+        max-width: 100vw;
+        max-height: 100vh;
+        background: #fff;
+        padding: 35px;
+        opacity: 0;
+        border: none;
+        transition: all 0.3s ease-in-out;
+        z-index: 102; /* Ensure the content is above the overlay */
+      }
+      .popup .popup-content img {
+        width: 100%;
+        height: 100%;
+      }
+      .popup.active {
+        top: 0px;
+        transition: top 0s ease-in-out 0s;
+      }
+      .popup.active .overlay {
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+      }
+      .popup.active .popup-content {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      .profile-edit-container {
+        width: 380px;
+        margin: auto;
+        padding: 0px 10px;
+      }
+      .profile-picture {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #d3d3d3;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      .profile-edit-container h2 {
+        margin: 0 0 20px 0;
+      }
+      .input-group {
+        margin-bottom: 15px;
+        text-align: left;
+      }
+      .input-group label {
+        display: block;
+        color: #888;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 5px;
+      }
+      .input-group input {
+        width: calc(100% - 20px);
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 20px;
+        background: #f5f5f5;
+        margin-bottom: 10px;
+      }
+      .mobImageContainer {
+        width: 121px;
+        height: 121px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .mobImageContainer img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .mobInfoHeading {
+        color: #000;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 10px 0px;
+      }
+      hr {
+        background-color: #d9d9d9;
+        border-width: 0;
+        padding-top: 1px;
+        margin: 10px 0px;
+      }
+      .imgContainer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+      }
+      .imgBox {
+        width: 100%;
+        display: grid;
+        justify-content: start;
+        align-items: center;
+        overflow: hidden;
+      }
+      .image {
+        width: 75px;
+        height: 75px;
+        border-radius: 11px;
+        border: 1px solid #d9d9d9;
+        background: #fff;
+        cursor: pointer;
+      }
+      .imgTitle {
+        color: #000;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 400;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="btnFloat">
+        <div class="floatSave" onclick="flotAction();">
+          <span>Save</span>
+        </div>
+        <p class="success">
+          <img src="../assets/images/Vector.png" alt="Success" />
+          <span>Profile updated successfully!</span>
+        </p>
+        <div class="floatPreview" id="openPopup3"><span>Preview</span></div>
+        <div class="popup" id="popupAddTask">
+          <div class="overlay"></div>
+          <div class="popup-content">
+            <img src="../assets/images/Interface_1_1.png" alt="" />
+
+            <button class="btnClose">&times;</button>
+          </div>
+        </div>
+      </div>
+      <div class="profile-edit-container">
+        <h2>Edit Profile</h2>
+        <div>
+          <p class="mobInfoHeading">Profile Picture</p>
+          <div class="mobImageContainer">
+            <img src="../assets/images/Ellipse_8.jpg" alt="" />
+          </div>
+        </div>
+        <hr />
+        <div>
+          <p class="mobInfoHeading">Personal Info</p>
+          <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="XXXXX" />
+          </div>
+          <div class="input-group">
+            <label for="">Email</label>
+            <input type="email" name="email" value="xxxxx@gmail.com" />
+          </div>
+          <div class="input-group">
+            <label for="">Company Name</label>
+            <input type="text" name="email" value="xxxxx@gmail.com" />
+          </div>
+          <div class="input-group">
+            <label for="">Position/Title</label>
+            <input type="text" name="email" value="Manager" />
+          </div>
+        </div>
+        <hr />
+        <div>
+          <p class="mobInfoHeading">Contact Info</p>
+          <div class="input-group">
+            <label for="">Mobile No.</label>
+            <input type="text" name="name" value="+65 6123 4567" />
+          </div>
+          <div class="input-group">
+            <label for="">Office No.</label>
+            <input type="text" name="email" value="+65 6123 4567" />
+          </div>
+          <div class="input-group">
+            <label for="">Fax No.</label>
+            <input type="text" name="email" value="+65 6888 5555" />
+          </div>
+          <div class="input-group">
+            <label for="">Telegram Username</label>
+            <input type="text" name="email" value="@xxxxxxx" />
+          </div>
+          <div class="input-group">
+            <label for="">WhatsApp No.</label>
+            <input type="text" name="email" value="+65 9123 4567" />
+          </div>
+        </div>
+        <hr />
+        <div>
+          <p class="mobInfoHeading">Socials</p>
+          <div class="input-group">
+            <label for="">Facebook</label>
+            <input type="text" value="facebook.com/" />
+          </div>
+          <div class="input-group">
+            <label for="">Instagram</label>
+            <input type="text" value="instagram.com/" />
+          </div>
+          <div class="input-group">
+            <label for="">X</label>
+            <input type="text" value="x.com/" />
+          </div>
+          <div class="input-group">
+            <label for="">LinkedIn</label>
+            <input type="text" value="linkedin.com/" />
+          </div>
+          <div class="input-group">
+            <label for="">Tiktok</label>
+            <input type="text" value="tiktok.com/" />
+          </div>
+          <div class="input-group">
+            <label for="">Snapchat</label>
+            <input type="text" value="snapchat.com/" />
+          </div>
+          <div class="input-group">
+            <label for="">Youtube</label>
+            <input type="text" value="youtube.com/" />
+          </div>
+          <div class="input-group">
+            <label for="">Website Link</label>
+            <input type="text" value="thenetworktap.com" />
+          </div>
+        </div>
+        <hr />
+        <div>
+          <p class="mobInfoHeading">Others</p>
+          <div class="input-group">
+            <label for="">Location</label>
+            <input type="text" name="" value="Singapore" />
+          </div>
+          <div class="input-group">
+            <label for="">Bio/Description</label>
+            <input type="text" name="" value="" />
+          </div>
+          <div class="input-group">
+            <label for="">PDF File</label>
+            <input type="text" name="" value="thenetworktap.pdf" />
+          </div>
+          <div class="input-group">
+            <label for="">Image Gallery</label>
+            <div class="imgContainer">
+              <div>
+                <div class="imgBox">
+                  <label for="imgInput">
+                    <img
+                      class="image"
+                      id="picUpload"
+                      src="./images/plus.PNG"
+                      alt="Upload Image"
+                    />
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/jpeg, image/png, image/jpg"
+                    id="imgInput"
+                    hidden="hidden"
+                  />
+                </div>
+                <h3 class="imgTitle">Image 1</h3>
+              </div>
+              <div>
+                <div class="imgBox">
+                  <label for="imgInput">
+                    <img
+                      class="image"
+                      id="picUpload"
+                      src="./images/plus.PNG"
+                      alt="Upload Image"
+                    />
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/jpeg, image/png, image/jpg"
+                    id="imgInput"
+                    hidden="hidden"
+                  />
+                </div>
+                <h3 class="imgTitle">Image 2</h3>
+              </div>
+              <div>
+                <div class="imgBox">
+                  <label for="imgInput">
+                    <img
+                      class="image"
+                      id="picUpload"
+                      src="./images/plus.PNG"
+                      alt="Upload Image"
+                    />
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/jpeg, image/png, image/jpg"
+                    id="imgInput"
+                    hidden="hidden"
+                  />
+                </div>
+                <h3 class="imgTitle">Image 3</h3>
+              </div>
+              <div>
+                <div class="imgBox">
+                  <label for="imgInput">
+                    <img
+                      class="image"
+                      id="picUpload"
+                      src="./images/plus.PNG"
+                      alt="Upload Image"
+                    />
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/jpeg, image/png, image/jpg"
+                    id="imgInput"
+                    hidden="hidden"
+                  />
+                </div>
+                <h3 class="imgTitle">Image 4</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function flotAction() {
+        let action = document.querySelector(".floatSave");
+        action.classList.toggle("active");
+      }
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        // Function to open a popup
+        function openPopup(popupId) {
+          document.getElementById(popupId).classList.add("active");
+        }
+
+        // Function to close a popup
+        function closePopup(popupId) {
+          document.getElementById(popupId).classList.remove("active");
+        }
+
+        // Add event listener for "Add Task" button
+        document.getElementById("openPopup3").addEventListener("click", () => {
+          openPopup("popupAddTask");
+        });
+
+        // Add event listeners for "Close" buttons
+        document.querySelectorAll(".btnClose").forEach((button) => {
+          button.addEventListener("click", () => {
+            closePopup(button.closest(".popup").id);
+          });
+        });
+
+        // Add event listeners for overlays
+        document.querySelectorAll(".popup .overlay").forEach((overlay) => {
+          overlay.addEventListener("click", () => {
+            closePopup(overlay.closest(".popup").id);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

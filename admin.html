@@ -18,362 +18,396 @@
           <h3 class="navTitle">Edit Profile</h3>
         </nav>
         <div class="mainContent">
-          <div class="profileSection">
-            <div class="profileInfo">
-              <div>
-                <img
-                  src="./images/Ellipse 8.jpg"
-                  alt="Profile Picture"
-                  srcset=""
-                />
-              </div>
-              <div>
-                <button class="btnProfileImg">Upload new photo</button>
-                <p class="profileImgtext">
-                  At least 800x800 px recommended. <br />JPG or PNG is allowed
-                </p>
-              </div>
-            </div>
-            <hr />
-            <div class="infoPadding">
-              <!-- Personal Info -->
-              <div class="infoContainer">
-                <div class="infoContainerWidth">
-                  <div class="infoHeader">
-                    <h3>Personal Info</h3>
-                    <button class="btnSave">
-                      <!-- btn Image -->
-                      <img src="./images/Save_icon.png" alt="" />Save
-                    </button>
+          <div class="mainBox">
+            <input type="checkbox" id="check" />
+            <div class="mainContainer">
+              <nav>
+                <h3 class="navTitle">Edit Profile</h3>
+              </nav>
+              <div class="main">
+                <div class="btnFloat">
+                  <div class="floatSave" onclick="flotAction();">
+                    <span>Save</span>
                   </div>
-                  <div class="personalInfo">
-                    <div>
-                      <p class="infoTitle">Full Name</p>
-                      <h3 class="infoText">Chloe Saw</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Email</p>
-                      <h3 class="infoText">chloesaw05@gmail.com</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Company Name</p>
-                      <h3 class="infoText">The Network Tap</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Position/Role</p>
-                      <h3 class="infoText">Designer</h3>
+                  <p class="success">
+                    <img src="../assets/images/Vector.png" alt="Success" />
+                    <span>Profile updated successfully!</span>
+                  </p>
+                  <div class="floatPreview" id="openPopup3">
+                    <span>Preview</span>
+                  </div>
+                  <div class="popup" id="popupAddTask">
+                    <div class="overlay"></div>
+                    <div class="popup-content">
+                      <img src="../assets/images/Interface_1_1.png" alt="" />
+
+                      <button class="btnClose">&times;</button>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- Contact Info -->
-              <div class="infoContainer">
-                <div class="infoContainerWidth">
-                  <div class="infoHeader">
-                    <h3>Contact Info</h3>
-                    <button class="btnSave">
-                      <!-- btn Image -->
-                      <img src="./images/Save_icon.png" alt="" />Save
-                    </button>
-                  </div>
-                  <div class="contactInfo">
-                    <div>
-                      <p class="infoTitle">Mobile No.</p>
-                      <h3 class="infoText">65 9190 8087</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Office No.</p>
-                      <h3 class="infoText">65 6123 4567</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Fax No.</p>
-                      <h3 class="infoText">65 6123 4567</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Telegram Username</p>
-                      <h3 class="infoText">@chlowy</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">WhatsApp No.</p>
-                      <h3 class="infoText">65 9190 8087</h3>
+                <div class="profile-edit-container">
+                  <h2>Edit Profile</h2>
+                  <div>
+                    <p class="mobInfoHeading">Profile Picture</p>
+                    <div class="mobImageContainer">
+                      <img src="../assets/images/Ellipse_8.jpg" alt="" />
                     </div>
                   </div>
-                </div>
-              </div>
-              <!-- Social Info -->
-              <div class="infoContainer">
-                <div class="infoContainerWidth">
-                  <div class="infoHeader">
-                    <h3>Socials</h3>
-                    <button class="btnSave">
-                      <!-- btn Image -->
-                      <img src="./images/Save_icon.png" alt="" />Save
-                    </button>
-                  </div>
-                  <div class="personalInfo">
-                    <div>
-                      <p class="infoTitle">Facebook</p>
-                      <h3 class="infoText">facebook.com/</h3>
+                  <hr />
+                  <div>
+                    <p class="mobInfoHeading">Personal Info</p>
+                    <div class="input-group">
+                      <label for="name">Name</label>
+                      <input type="text" name="name" value="XXXXX" />
                     </div>
-                    <div>
-                      <p class="infoTitle">Instagram</p>
-                      <h3 class="infoText">instagram.com/</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">X</p>
-                      <h3 class="infoText">x.com/</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Linkedin</p>
-                      <h3 class="infoText">linkedin.com/</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Tiktok</p>
-                      <h3 class="infoText">tiktok.com/</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Snapchat</p>
-                      <h3 class="infoText">snapchat.com/</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Youtube</p>
-                      <h3 class="infoText">youtube.com/</h3>
-                    </div>
-                    <div>
-                      <p class="infoTitle">Website Link</p>
-                      <h3 class="infoText">thenetworktap.com</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Location Info -->
-              <div class="infoContainer">
-                <div class="infoContainerWidth">
-                  <div class="infoHeader">
-                    <h3>Location</h3>
-                    <button class="btnSave">
-                      <!-- btn Image -->
-                      <img src="./images/Save_icon.png" alt="" />Save
-                    </button>
-                  </div>
-                  <div class="">
-                    <div>
-                      <button class="btnPrimary">
-                        <img src="./images/Location_icon.png" alt="" />Singapore
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Bio/Description -->
-              <div class="infoContainer">
-                <div class="infoContainerWidth">
-                  <div class="infoHeader">
-                    <h3>Bio/Description</h3>
-                    <button class="btnSave">
-                      <!-- btn Image -->
-                      <img src="./images/Save_icon.png" alt="" />Save
-                    </button>
-                  </div>
-                  <div class="">
-                    <div>
-                      <div class="bio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad min
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- PDF File -->
-              <div class="infoContainer">
-                <div class="infoContainerWidth">
-                  <div class="infoHeader">
-                    <h3>PDF File</h3>
-                    <button class="btnSave">
-                      <!-- btn Image -->
-                      <img src="./images/Save_icon.png" alt="" />Save
-                    </button>
-                  </div>
-                  <div class="">
-                    <div>
-                      <button type="button" class="btnPrimary" id="customBtn">
-                        <img src="./images/PDF_Icon.png" alt="" /><span
-                          id="customText"
-                          >Thenetworktap.pdf</span
-                        >
-                      </button>
+                    <div class="input-group">
+                      <label for="">Email</label>
                       <input
-                        id="file"
-                        type="file"
-                        accept=".pdf"
-                        hidden="hidden"
+                        type="email"
+                        name="email"
+                        value="xxxxx@gmail.com"
                       />
                     </div>
+                    <div class="input-group">
+                      <label for="">Company Name</label>
+                      <input type="text" name="email" value="xxxxx@gmail.com" />
+                    </div>
+                    <div class="input-group">
+                      <label for="">Position/Title</label>
+                      <input type="text" name="email" value="Manager" />
+                    </div>
                   </div>
-                </div>
-              </div>
-              <!-- Image Container -->
-              <div class="infoContainer">
-                <div class="infoContainerWidth">
-                  <div class="infoHeader">
-                    <h3>Contact Info</h3>
-                    <button class="btnSave">
-                      <!-- btn Image -->
-                      <img src="./images/Save_icon.png" alt="" />Save
-                    </button>
+                  <hr />
+                  <div>
+                    <p class="mobInfoHeading">Contact Info</p>
+                    <div class="input-group">
+                      <label for="">Mobile No.</label>
+                      <input type="text" name="name" value="+65 6123 4567" />
+                    </div>
+                    <div class="input-group">
+                      <label for="">Office No.</label>
+                      <input type="text" name="email" value="+65 6123 4567" />
+                    </div>
+                    <div class="input-group">
+                      <label for="">Fax No.</label>
+                      <input type="text" name="email" value="+65 6888 5555" />
+                    </div>
+                    <div class="input-group">
+                      <label for="">Telegram Username</label>
+                      <input type="text" name="email" value="@xxxxxxx" />
+                    </div>
+                    <div class="input-group">
+                      <label for="">WhatsApp No.</label>
+                      <input type="text" name="email" value="+65 9123 4567" />
+                    </div>
                   </div>
-                  <div class="imgContainer">
-                    <div>
-                      <div class="imgBox">
-                        <label for="imgInput">
-                          <img
-                            class="image"
-                            id="picUpload"
-                            src="./images/plus.PNG"
-                            alt="Upload Image"
-                          />
-                        </label>
-                        <input
-                          type="file"
-                          accept="image/jpeg, image/png, image/jpg"
-                          id="imgInput"
-                          hidden="hidden"
-                        />
-                      </div>
-                      <h3 class="imgTitle">Image 1</h3>
+                  <hr />
+                  <div>
+                    <p class="mobInfoHeading">Socials</p>
+                    <div class="input-group">
+                      <label for="">Facebook</label>
+                      <input type="text" value="facebook.com/" />
                     </div>
-                    <div>
-                      <div class="imgBox">
-                        <label for="imgInput">
-                          <img
-                            class="image"
-                            id="picUpload"
-                            src="./images/plus.PNG"
-                            alt="Upload Image"
-                          />
-                        </label>
-                        <input
-                          type="file"
-                          accept="image/jpeg, image/png, image/jpg"
-                          id="imgInput"
-                          hidden="hidden"
-                        />
-                      </div>
-                      <h3 class="imgTitle">Image 2</h3>
+                    <div class="input-group">
+                      <label for="">Instagram</label>
+                      <input type="text" value="instagram.com/" />
                     </div>
-                    <div>
-                      <div class="imgBox">
-                        <label for="imgInput">
-                          <img
-                            class="image"
-                            id="picUpload"
-                            src="./images/plus.PNG"
-                            alt="Upload Image"
-                          />
-                        </label>
-                        <input
-                          type="file"
-                          accept="image/jpeg, image/png, image/jpg"
-                          id="imgInput"
-                          hidden="hidden"
-                        />
-                      </div>
-                      <h3 class="imgTitle">Image 3</h3>
+                    <div class="input-group">
+                      <label for="">X</label>
+                      <input type="text" value="x.com/" />
                     </div>
-                    <div>
-                      <div class="imgBox">
-                        <label for="imgInput">
-                          <img
-                            class="image"
-                            id="picUpload"
-                            src="./images/plus.PNG"
-                            alt="Upload Image"
-                          />
-                        </label>
-                        <input
-                          type="file"
-                          accept="image/jpeg, image/png, image/jpg"
-                          id="imgInput"
-                          hidden="hidden"
-                        />
-                      </div>
-                      <h3 class="imgTitle">Image 4</h3>
+                    <div class="input-group">
+                      <label for="">LinkedIn</label>
+                      <input type="text" value="linkedin.com/" />
                     </div>
-                    <div>
-                      <div class="imgBox">
-                        <label for="imgInput">
-                          <img
-                            class="image"
-                            id="picUpload"
-                            src="./images/plus.PNG"
-                            alt="Upload Image"
-                          />
-                        </label>
-                        <input
-                          type="file"
-                          accept="image/jpeg, image/png, image/jpg"
-                          id="imgInput"
-                          hidden="hidden"
-                        />
-                      </div>
-                      <h3 class="imgTitle">Image 5</h3>
+                    <div class="input-group">
+                      <label for="">Tiktok</label>
+                      <input type="text" value="tiktok.com/" />
                     </div>
-                    <div>
-                      <div class="imgBox">
-                        <label for="imgInput">
-                          <img
-                            class="image"
-                            id="picUpload"
-                            src="./images/plus.PNG"
-                            alt="Upload Image"
-                          />
-                        </label>
-                        <input
-                          type="file"
-                          accept="image/jpeg, image/png, image/jpg"
-                          id="imgInput"
-                          hidden="hidden"
-                        />
-                      </div>
-                      <h3 class="imgTitle">Image 6</h3>
+                    <div class="input-group">
+                      <label for="">Snapchat</label>
+                      <input type="text" value="snapchat.com/" />
                     </div>
-                    <div>
-                      <div class="imgBox">
-                        <label for="imgInput">
-                          <img
-                            class="image"
-                            id="picUpload"
-                            src="./images/plus.PNG"
-                            alt="Upload Image"
-                          />
-                        </label>
-                        <input
-                          type="file"
-                          accept="image/jpeg, image/png, image/jpg"
-                          id="imgInput"
-                          hidden="hidden"
-                        />
-                      </div>
-                      <h3 class="imgTitle">Image 7</h3>
+                    <div class="input-group">
+                      <label for="">Youtube</label>
+                      <input type="text" value="youtube.com/" />
                     </div>
-                    <div>
-                      <div class="imgBox">
-                        <img class="image" src="./images/plus.PNG" />
+                    <div class="input-group">
+                      <label for="">Website Link</label>
+                      <input type="text" value="thenetworktap.com" />
+                    </div>
+                  </div>
+                  <hr />
+                  <div>
+                    <p class="mobInfoHeading">Others</p>
+                    <div class="input-group">
+                      <label for="">Location</label>
+                      <input type="text" name="" value="Singapore" />
+                    </div>
+                    <div class="input-group">
+                      <label for="">Bio/Description</label>
+                      <input type="text" name="" value="" />
+                    </div>
+                    <div class="input-group">
+                      <label for="">PDF File</label>
+                      <input type="text" name="" value="thenetworktap.pdf" />
+                    </div>
+                    <div class="input-group">
+                      <label for="">Image Gallery</label>
+                      <div class="imgContainer">
+                        <div>
+                          <div class="imgBox">
+                            <label for="imgInput">
+                              <img
+                                class="image"
+                                id="picUpload"
+                                src="./images/plus.PNG"
+                                alt="Upload Image"
+                              />
+                            </label>
+                            <input
+                              type="file"
+                              accept="image/jpeg, image/png, image/jpg"
+                              id="imgInput"
+                              hidden="hidden"
+                            />
+                          </div>
+                          <h3 class="imgTitle">Image 1</h3>
+                        </div>
+                        <div>
+                          <div class="imgBox">
+                            <label for="imgInput">
+                              <img
+                                class="image"
+                                id="picUpload"
+                                src="./images/plus.PNG"
+                                alt="Upload Image"
+                              />
+                            </label>
+                            <input
+                              type="file"
+                              accept="image/jpeg, image/png, image/jpg"
+                              id="imgInput"
+                              hidden="hidden"
+                            />
+                          </div>
+                          <h3 class="imgTitle">Image 2</h3>
+                        </div>
+                        <div>
+                          <div class="imgBox">
+                            <label for="imgInput">
+                              <img
+                                class="image"
+                                id="picUpload"
+                                src="./images/plus.PNG"
+                                alt="Upload Image"
+                              />
+                            </label>
+                            <input
+                              type="file"
+                              accept="image/jpeg, image/png, image/jpg"
+                              id="imgInput"
+                              hidden="hidden"
+                            />
+                          </div>
+                          <h3 class="imgTitle">Image 3</h3>
+                        </div>
+                        <div>
+                          <div class="imgBox">
+                            <label for="imgInput">
+                              <img
+                                class="image"
+                                id="picUpload"
+                                src="./images/plus.PNG"
+                                alt="Upload Image"
+                              />
+                            </label>
+                            <input
+                              type="file"
+                              accept="image/jpeg, image/png, image/jpg"
+                              id="imgInput"
+                              hidden="hidden"
+                            />
+                          </div>
+                          <h3 class="imgTitle">Image 4</h3>
+                        </div>
                       </div>
-                      <h3 class="imgTitle">Image 8</h3>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Preview -->
-          <div class="themePreview">
-            <h3 class="previedText">Preview</h3>
-            <div class="themePreviewImg">
-              <img src="./images/Interface 1 1.png" alt="" />
+            <!-- Navbar for mobile device -->
+            <nav class="navbar">
+              <div class="btnOne">
+                <label for="check">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="16"
+                    viewBox="0 0 25 16"
+                    fill="none"
+                    style="cursor: pointer"
+                  >
+                    <line
+                      x1="1"
+                      y1="1"
+                      x2="24"
+                      y2="1"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <line
+                      x1="1"
+                      y1="8"
+                      x2="24"
+                      y2="8"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <line
+                      x1="1"
+                      y1="15"
+                      x2="24"
+                      y2="15"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </label>
+              </div>
+              <div class="navLogo">
+                <a href="#">
+                  <img src="./images/TNT_LOGO.png" alt="" srcset="" />
+                </a>
+              </div>
+            </nav>
+            <!-- Sidebar -->
+            <div class="sidebarMenu">
+              <div class="logo">
+                <a href="#"
+                  ><img src="./images/TNT_LOGO.png" alt="" srcset=""
+                /></a>
+                <div class="logoTag">
+                  <p>Hello, <br />Chloe Saw</p>
+                </div>
+              </div>
+              <div class="btnTwo">
+                <label for="check">
+                  <i class="fa-solid fa-xmark"></i>
+                </label>
+              </div>
+
+              <div class="menu">
+                <ul class="largeView">
+                  <!-- Profile li-->
+                  <li>
+                    <p class="menuTag">Profile</p>
+                    <div class="subMenu">
+                      <ul>
+                        <li>
+                          <a class="menuChild" href="#">
+                            <img src="./images/profileLogo.png" alt="" />
+                            <p>Edit Profile</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="menuChild" href="#">
+                            <img
+                              src="./images/InterfaceDesignLogo.png"
+                              alt=""
+                            />
+                            <p>Interface Design</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!-- Work li-->
+                  <li>
+                    <p class="menuTag">Work</p>
+                    <div class="subMenu">
+                      <ul>
+                        <li>
+                          <a class="menuChild" href="#">
+                            <img src="./images/projects.png" alt="" />
+                            <p>Projects</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="menuChild" href="#">
+                            <img src="./images/schedule.png" alt="" />
+                            <p>Schedule</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="menuChild" href="#">
+                            <img src="./images/Resources.png" alt="" />
+                            <p>Resources</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!-- Others li-->
+                  <li>
+                    <p class="menuTag">Others</p>
+                    <div class="subMenu">
+                      <ul>
+                        <li>
+                          <a class="menuChild" href="#">
+                            <img src="./images/analytics.png" alt="" />
+                            <p>Analytics</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="menuChild" href="#">
+                            <img src="./images/reset pw.png" alt="" />
+                            <p>Reset Password</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <!-- Mobile View -->
+                <ul class="mobileView">
+                  <li>
+                    <div class="subMenu">
+                      <ul>
+                        <li>
+                          <a href="#"> Edit Profile </a>
+                        </li>
+                        <li>
+                          <a href="#"> Interface Design </a>
+                        </li>
+                        <li>
+                          <a href="#"> Projects </a>
+                        </li>
+                        <li>
+                          <a href="#"> Schedule </a>
+                        </li>
+                        <li>
+                          <a href="#"> Resources </a>
+                        </li>
+                        <li>
+                          <a href="#"> Analytics </a>
+                        </li>
+                        <li>
+                          <a href="#"> Reset Password </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="logoutLink">
+                <a href="">Logout</a>
+              </div>
             </div>
           </div>
         </div>

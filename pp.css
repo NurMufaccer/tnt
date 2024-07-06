@@ -8,8 +8,10 @@
 
 .mainContainer {
   position: absolute;
+  background: white;
   left: 318px;
   right: 0; /* Adjust according to sidebar width */
+
   background: #f5f5f5;
 }
 .navTitle {
@@ -18,6 +20,69 @@
   font-weight: 500;
   padding: 30px 50px;
 }
+.main {
+  max-width: 380px;
+  min-height: 100vh;
+  background: #fff;
+  margin: auto;
+}
+.btnFloat {
+  width: 380px;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.floatSave span {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 20px;
+  background: #000;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+.success {
+  position: absolute;
+  bottom: 55px;
+  width: 90%;
+  height: 40px;
+  color: #3b7850;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid #3b7850;
+  background: #effdf3;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.floatSave.active + .success {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+}
+.floatPreview span {
+  color: #000;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 20px;
+  border: 1px solid #000;
+  background: #fff;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+.success img {
+  margin-right: 10px;
+}
 .popup {
   position: fixed;
   top: -100vh;
@@ -25,7 +90,17 @@
   width: 100%;
   height: 100%;
   transition: top 0.3s ease-in-out 0.2s;
-  z-index: 1000; /* Ensure the popup is above other content */
+  z-index: 100;
+}
+.popup .btnClose {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 20px;
+  color: #000;
+  font-weight: 500px;
+  background: #fff;
+  border: none;
 }
 .popup .overlay {
   position: absolute;
@@ -36,7 +111,7 @@
   background: rgba(255, 255, 255, 0.7);
   opacity: 0;
   transition: opacity 0.1s ease-in-out 0.2s;
-  z-index: 1001; /* Ensure the overlay is above the popup container */
+  z-index: 101; /* Ensure the overlay is above the popup container */
 }
 .popup .popup-content {
   position: absolute;
@@ -44,32 +119,18 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1.15);
   width: 95%;
-  max-width: 522px;
+  max-width: 100vw;
+  max-height: 100vh;
   background: #fff;
   padding: 35px;
-  border-radius: 40px;
   opacity: 0;
-  border: 1px solid #888;
+  border: none;
   transition: all 0.3s ease-in-out;
-  z-index: 1002; /* Ensure the content is above the overlay */
+  z-index: 102; /* Ensure the content is above the overlay */
 }
-.popup .popup-content .controls button {
-  border-radius: 11px;
-  color: #000;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 400;
-  padding: 10px 15px;
-  cursor: pointer;
-}
-.popup .popup-content .controls .btnClose {
-  background: #fff;
-  border: 1px solid #d9d9d9;
-}
-.popup .popup-content .controls .btnSubmit {
-  background: #000;
-  color: #fff;
-  border: 1px solid #000;
+.popup .popup-content img {
+  width: 100%;
+  height: 100%;
 }
 .popup.active {
   top: 0px;
@@ -83,166 +144,66 @@
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
-.popup-content > h3 {
-  color: #000;
-  font-size: 24px;
-  font-weight: 600;
-  padding-bottom: 30px;
-}
-.infoHeader {
-  display: flex;
-  justify-content: space-between;
-}
-.infoHeader > h3 {
-  color: #000;
-  font-size: 20px;
-  font-weight: 600;
-}
-.btnPrimary {
-  color: #000;
-  font-size: 15px;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  border-radius: 11px;
-  border: 1px solid #d9d9d9;
-  background: #fff;
-  padding: 8px 13px;
-  gap: 3px;
-  width: 100%;
-  margin-top: 12px;
-  margin-bottom: 25px;
-  cursor: pointer;
-}
-.controls {
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-}
-
-.mainContent {
-  padding: 20px;
-  display: flex;
-  gap: 20px;
-}
-.projectsSection {
-  /*  width: 620px;*/ /* Adjust width */
-  width: 56%;
-}
-.projectsContainer {
-  border-radius: 40px;
-  padding: 0px 10px;
-  margin-bottom: 15px;
-}
-.projectNav {
-  display: flex;
-  align-items: center;
-}
-.projectsContainerHeader {
-  color: #000;
-  font-size: 24px;
-  font-weight: 500;
+.profile-edit-container {
+  width: 380px;
+  margin: auto;
   padding: 0px 10px;
 }
-.btnProjectModal {
-  color: #000;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  border-radius: 11px;
-  border: 1px solid #d9d9d9;
-  background: #fff;
-  padding: 3px 15px;
-  gap: 3px;
-  cursor: pointer;
-  transition: all 0.2s linear;
-}
-
-.btnProjectModal img {
-  width: 20px;
-  height: 20px;
-}
-
-.btnProjectModal:hover {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.2em);
-}
-
-.project {
-  height: auto;
-  position: relative;
-  border-radius: 40px;
-  margin-bottom: 30px;
-}
-.project img {
-  width: 100%;
-  border-radius: 40px;
-}
-.projectInfo {
-  position: absolute;
-  left: 30px;
-  bottom: 30px;
-}
-.projectTitle {
-  color: #fff;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-size: 20px;
-  font-weight: 600;
-  padding: 5px 0;
-}
-.projectDescription {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-/* Preview */
-.projectPreview {
-  width: 42%;
-  border-radius: 40px;
-  background: #fff;
-}
-
-.chartContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin: 0 auto;
-}
-.chartContainerHeading {
-  color: #000;
-  font-size: 24px;
-  font-weight: 600;
-  padding: 30px 0px 0px 40px;
-}
-.chartBox {
-  width: 400px;
-  padding-top: 40px;
-  background: white;
-}
-.chartContainer .chartDetails ul {
-  list-style: none;
-  padding: 0;
-}
-.chartContainer .chartDetails ul li {
-  font-size: 20px;
-  margin: 30px 0px;
-  display: flex;
-  align-items: center;
-}
-.dot {
-  width: 10px;
-  height: 10px;
+.profile-picture {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin-right: 8px;
+  background-color: #d3d3d3;
+  display: inline-block;
+  margin-bottom: 20px;
 }
-.percentage {
-  font-weight: 600;
+.profile-edit-container h2 {
+  margin: 0 0 20px 0;
+}
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.input-group label {
+  display: block;
+  color: #888;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.input-group input {
+  width: calc(100% - 20px);
   color: #000;
-  padding: 0px 15px;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background: #f5f5f5;
+  margin-bottom: 10px;
+}
+.mobImageContainer {
+  width: 121px;
+  height: 121px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mobImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.mobInfoHeading {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0px;
 }
 hr {
   background-color: #d9d9d9;
@@ -250,153 +211,37 @@ hr {
   padding-top: 1px;
   margin: 10px 0px;
 }
-/* To Do */
-.toDoContainer {
-  padding: 30px 30px 0px 40px;
-  margin-bottom: 15px;
-}
-.toDoHeader {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 30px;
-}
-.toDoHeader h3 {
-  color: #000;
-  font-size: 24px;
-  font-weight: 600;
-}
-
-/* Button Save */
-.btnManage {
-  color: #000;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 400;
-  border: none;
-  background: #fff;
-  padding: 8px 13px;
-  cursor: pointer;
-  transition: all 0.2s linear;
-}
-.btnManage:hover {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.2em);
-}
-.schedule {
-  margin: 12px 0px;
-  background: #f5f5f5;
-  border-radius: 21px;
-  border: 1px solid #f5f5f5;
-  padding: 14px 0px 20px 23px;
-}
-.schedule h3 {
-  color: #000;
-  font-size: 36px;
-  font-weight: 600;
-  padding-bottom: 7px;
-}
-.schedule p {
-  color: #000;
-  font-size: 16px;
-  font-weight: 400;
-}
-.btnAddTask {
-  width: 100%;
-  color: #000;
-  font-size: 20px;
-  font-weight: 400;
-  text-align: center;
-  border-radius: 21px;
-  border: 1px solid #000;
-  background: #fff;
-  padding: 13px 0px;
-  gap: 3px;
-  margin: 11px 0px;
-  cursor: pointer;
-  transition: all 0.2s linear;
-}
-
-.btnAddTask:hover {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.2em);
-}
-/* To Do Popup */
-.taskPopupContainer {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 10px 0px;
-}
-.searchInput {
-  width: 100%;
-  position: relative;
-}
-.searchInput input {
-  width: 100%;
-  font-size: 15px;
-  font-weight: 400;
-  display: block;
-  border-radius: 15px;
-  border: 1px solid #d9d9d9;
-  padding: 8px 15px;
-}
-.searchInput button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 45px;
-  height: 100%;
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-size: 15px;
-}
-.searchInput button i {
-  color: #000;
-}
-.scheduleInput {
-  display: flex;
-  align-items: center;
+.imgContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 5px;
 }
-.scheduleInput .inputDate {
-  width: 27%;
-  font-size: 15px;
-  font-weight: 400;
-  border-radius: 15px;
-  border: 1px solid #d9d9d9;
-  padding: 10px 10px;
-  text-align: center;
-}
-.scheduleInput .inputTime {
-  width: 23%;
-  font-size: 15px;
-  font-weight: 400;
-  border-radius: 15px;
-  border: 1px solid #d9d9d9;
-  padding: 10px 10px;
-  text-align: center;
-}
-.textareaPopupContainer {
-  display: flex;
-  align-items: start;
-  gap: 15px;
-  padding: 10px 0px;
-}
-.searchInput textarea {
+.imgBox {
   width: 100%;
+  display: grid;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+}
+.image {
+  width: 75px;
+  height: 75px;
+  border-radius: 11px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  cursor: pointer;
+}
+.imgTitle {
+  color: #000;
+  text-align: center;
   font-size: 15px;
   font-weight: 400;
-  border-radius: 15px;
-  border: 1px solid #d9d9d9;
-  padding: 8px 15px;
+  padding: 10px;
 }
-
 /* Navbar design for Mobile device */
 .navbar {
   display: none; /* This hides the navbar */
-  position: absolute;
+  position: fixed;
   background: white;
   width: 100%;
   height: 100px;
@@ -507,9 +352,8 @@ hr {
 /* sidebar bottom for mobile device */
 .sidebarMenu .logoutLink {
   display: none;
-  position: absolute;
-
-  bottom: 15px;
+  position: fixed;
+  bottom: 25px;
   width: 100%;
   padding: 14px 45px 0px 33px;
 }
@@ -528,30 +372,9 @@ hr {
 .mobileView {
   display: none;
 }
-/* For large devices (desktops and laptops) */
-@media only screen and (min-width: 1440px) and (max-width: 2559px) {
-  .chartBox {
-    width: 200px;
-    padding-top: 0px;
-  }
-  .chartContainer .chartDetails ul li {
-    font-size: 16px;
-  }
-}
+
 /* For large devices (desktops and laptops) */
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
-  .chartContainer {
-    gap: 0px;
-  }
-
-  .chartBox {
-    width: 140px;
-    padding: 0px;
-  }
-  .chartContainer .chartDetails ul li {
-    font-size: 14px;
-    margin: 10px 0px 18px 0px;
-  }
   themeContainerHeader {
     padding: 0px;
   }
@@ -574,26 +397,16 @@ hr {
 }
 /* For medium devices (tablets) */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .navTitle {
-    padding: 30px 20px;
-  }
-  .chartContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-  }
-  .chartContainerHeading {
-    font-size: 20px;
-
-    padding: 10px 0px 0px 40px;
-  }
-  .chartBox {
-    width: 150px;
+  themeContainerHeader {
     padding: 0px;
   }
-  .chartContainer .chartDetails ul li {
-    font-size: 14px;
-    margin: 0px 0px 20px 0px;
+
+  .interfaceContainer {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 10px;
+  }
+  .themePreview {
+    height: 500px;
   }
 
   .sidebarMenu .menu .subMenu ul li {
@@ -683,10 +496,17 @@ hr {
   .mobileView {
     display: block;
   }
+  .mainContainer {
+    position: absolute;
+    background: white;
+    left: 0;
+    background: #f5f5f5;
+  }
 
   .sidebarMenu {
     width: 280px;
     left: -280px;
+    height: 100%;
     background: #f5f5f5;
   }
   .sidebarMenu .menu {
